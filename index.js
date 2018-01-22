@@ -1,5 +1,3 @@
-function Validate(SCHEMA = {}, OPTIONS = {}) {
-    return function middleware(req, res, next) {
-        next()
-    }
-};
+const middleware = require("./lib");
+
+module.exports = middleware;
