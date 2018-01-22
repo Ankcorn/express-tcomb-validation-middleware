@@ -36,6 +36,7 @@ jobs:
       # run tests!
       - run: npm run eslint
       - run: npm test
+      - run: npm run coveralls
 
 
 
