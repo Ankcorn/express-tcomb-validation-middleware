@@ -1,3 +1,3 @@
-const middleware = require("./lib");
+const middleware = require('./lib');
 
 module.exports = middleware;
