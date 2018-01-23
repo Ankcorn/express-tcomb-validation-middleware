@@ -4,6 +4,7 @@
   "description": "Express middleware to validate requests using the tcomb & tcomb validation library",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "mocha",
     "eslint": "eslint index.js ./src/**/*.js ./test/**/*.js ",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
@@ -26,6 +27,9 @@
     "prettier-eslint": "8.8.1"
   },
   "dependencies": {
+    "body-parser": "1.18.2",
+    "chai": "4.1.2",
+    "express": "4.16.2",
     "tcomb": "3.2.24",
     "tcomb-validation": "3.4.1"
   }
