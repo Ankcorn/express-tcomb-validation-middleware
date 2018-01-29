@@ -16,19 +16,19 @@ describe('E2E tests', () => { // eslint-disable-line no-undef
       .end((err, res)=>{
         expect(res.status).to.be.eql(400);
         expect(res.body).to.have.lengthOf(2);
-        expect(res.body[0].message).to.be.eql("Invalid value undefined supplied to /test: String")
-        expect(res.body[1].message).to.be.eql("Invalid value undefined supplied to /bool: Boolean")
-        done()
+        expect(res.body[0].message).to.be.eql('Invalid value undefined supplied to /test: String');
+        expect(res.body[1].message).to.be.eql('Invalid value undefined supplied to /bool: Boolean');
+        done();
       });
   });
   it('Tests posting valid body', (done) => { // eslint-disable-line no-undef
     chai.request(server)
       .post('/test')
-      .send({test:"string",bool:false})
-      .end((err, res)=>{
+      .send({ test: 'string', bool: false })
+      .end((err, res) => {
         expect(res.status).to.be.eql(200);
-        expect(res.body.message).to.be.a("string");
-        done()
+        expect(res.body.message).to.be.a('string');
+        done();
       });
   });
   // it('Tests put invalid body', () => { // eslint-disable-line no-undef
