@@ -8,7 +8,7 @@
     "test": "mocha --exit",
     "eslint": "eslint index.js ./src/**/*.js ./test/**/*.js ",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
-    "coverage": "cross-env NODE_ENV=test nyc --reporter lcovonly --cache mocha test/*.test.js",
+    "coverage": "cross-env NODE_ENV=test nyc --reporter lcovonly --cache mocha test/*.test.js --exit",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "author": "Thomas Ankcorn",
