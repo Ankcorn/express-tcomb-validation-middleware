@@ -1,18 +1,15 @@
-const t = require('./lib');
-const express = require('express');
-const bodyParser = require('body-parser');
-// const tcomb = require('tcomb');
+/**
+ * @module express-tcomb-validation-middleware
+ */
 
-const app = express();
+const validation = require('./lib');
 
-app.use(bodyParser.json());
+/**
+ * Express Tcomb Validation Middleware
+ * @param { Object} Schema The schema that is being validated against
+ * @param { Object} Options Optional
+ * @return { Func } Express middleware function
+ *
+ */
 
-// const Dataset = tcomb.struct({
-//   test: tcomb.String,
-// });
-
-app.post('/dataset', t({}, {}), (req, res) => {
-  res.send(req.body);
-});
-
-app.listen(3000);
+module.exports = validation;

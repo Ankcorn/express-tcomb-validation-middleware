@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha",
+    "test": "mocha --exit",
     "eslint": "eslint index.js ./src/**/*.js ./test/**/*.js ",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "coverage": "cross-env NODE_ENV=test nyc --reporter lcovonly --cache mocha test/*.test.js",
@@ -27,9 +27,12 @@
     "prettier-eslint": "8.8.1"
   },
   "dependencies": {
+    "axios": "0.17.1",
     "body-parser": "1.18.2",
     "chai": "4.1.2",
+    "chai-http": "3.0.0",
     "express": "4.16.2",
+    "request": "2.83.0",
     "tcomb": "3.2.24",
     "tcomb-validation": "3.4.1"
   }

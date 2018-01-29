@@ -17,10 +17,10 @@ describe('Error module tests', () => { // eslint-disable-line no-undef
 describe('isTcomb tests', () => { // eslint-disable-line no-undef
   it('Scenario: Object is tcomb', () => { // eslint-disable-line no-undef
     const tcombObject = struct({ test: String });
-    expect(validation.isTcomb(tcombObject), true);
+    expect(validation.isNotTcomb(tcombObject), true);
   });
   it('Object is not tcomb', () => { // eslint-disable-line no-undef
     const notTcombObject = { test: String };
-    expect(validation.isTcomb(notTcombObject), false);
+    expect(validation.isNotTcomb(notTcombObject), false);
   });
 });
