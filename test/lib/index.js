@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const t = require('../../index');
-const { test } = require('./models');
+const { test, getTest } = require('./models');
 
 const app = express();
 
@@ -15,7 +15,11 @@ app.put('/test', t(test, { active: false }), (req, res) => {
   res.send({ message: 'was not validated', body: req.body });
 });
 
-app.get('/test/:test/:bool', t(test, { verboseErrors: false }), (req, res) => {
+app.get('/test/:test/:bool', t(getTest, { active: true, verboseErrors: false }), (req, res) => {
+  res.send('schema was obviously valid');
+});
+
+app.get('/test', t(getTest, { active: true, verboseErrors: false }), (req, res) => {
   res.send('schema was obviously valid');
 });
 

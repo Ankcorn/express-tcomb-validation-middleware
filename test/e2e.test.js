@@ -13,7 +13,7 @@ describe('E2E tests', () => { // eslint-disable-line no-undef
     chai.request(server)
       .post('/test')
       .send({})
-      .end((err, res)=>{
+      .end((err, res) => {
         expect(res.status).to.be.eql(400);
         expect(res.body).to.have.lengthOf(2);
         expect(res.body[0].message).to.be.eql('Invalid value undefined supplied to /test: String');
@@ -31,22 +31,30 @@ describe('E2E tests', () => { // eslint-disable-line no-undef
         done();
       });
   });
-  // it('Tests put invalid body', () => { // eslint-disable-line no-undef
-  //   // Validate();
-  // });
-  // it('Tests put valid body', () => { // eslint-disable-line no-undef
-  //   // Validate();
-  // });
-  // it('Tests get invalid url params', () => { // eslint-disable-line no-undef
-  //   // Validate();
-  // });
-  // it('Tests get valid url params', () => { // eslint-disable-line no-undef
-  //   // Validate();
-  // });
-  // it('Tests get invalid url query', () => { // eslint-disable-line no-undef
-  //   // Validate();
-  // });
-  // it('Tests get valid url query', () => { // eslint-disable-line no-undef
-  //   // Validate();
-  // });
+  it('Tests put invalid body but validation is disabled on this route', (done) => { // eslint-disable-line no-undef
+    chai.request(server)
+      .put('/test')
+      .send({})
+      .end((err, res) => {
+        expect(res.status).to.be.eql(200);
+        done()
+      });
+  });
+  it('Tests get invalid url params and custom type', (done) => { // eslint-disable-line no-undef
+    chai.request(server)
+      .get('/test/hello/hello')
+      .end((err, res) => {
+        expect(res.status).to.be.eql(400);
+        expect(res.body.message).to.eql('Too long my friend');
+        done();
+      });
+  });
+  it('Tests get invalid url query', (done) => { // eslint-disable-line no-undef
+    chai.request(server)
+      .get('/test?test=hello&bool=hi')
+      .end((err, res) => {
+        expect(res.status).to.be.eql(200);
+        done();
+      });
+  });
 });
