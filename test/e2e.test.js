@@ -42,7 +42,7 @@ describe('E2E tests', () => { // eslint-disable-line no-undef
   });
   it('Tests get invalid url params and custom type', (done) => { // eslint-disable-line no-undef
     chai.request(server)
-      .get('/test/hello/hello')
+      .get('/test/on/hello/hello')
       .end((err, res) => {
         expect(res.status).to.be.eql(400);
         expect(res.body.message).to.eql('Too long my friend');
