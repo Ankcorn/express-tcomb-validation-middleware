@@ -34,7 +34,10 @@ app.post('/test', t(test), (req, res) => {
   res.send({ message: 'schema was obviously valid' });
 });
 ```
-
+The module also accepts an options object like so
+```
+t(test,{ active: true, verboseErrors: false })
+```
 ## Tests
 
 To run the tests do
