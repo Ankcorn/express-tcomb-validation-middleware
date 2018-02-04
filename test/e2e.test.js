@@ -1,7 +1,6 @@
 const chai = require('chai');
 const server = require('./lib');
 const chaiHttp = require('chai-http');
-const sinon  = require('sinon');
 
 chai.use(chaiHttp);
 
@@ -11,7 +10,6 @@ const { expect } = chai;
 
 describe('E2E tests', () => { // eslint-disable-line no-undef
   it('Tests posting invalid body', (done) => { // eslint-disable-line no-undef
-    const spy = sinon.spy(console, 'log'); // Watch console.log
     chai.request(server)
       .post('/test')
       .send({ not: 'test' })
@@ -20,10 +18,6 @@ describe('E2E tests', () => { // eslint-disable-line no-undef
         expect(res.body).to.have.lengthOf(2);
         expect(res.body[0].message).to.be.eql('Invalid value undefined supplied to /test: String');
         expect(res.body[1].message).to.be.eql('Invalid value undefined supplied to /bool: Boolean');
-        expect(spy.calledWith(`
-        Invalid value undefined supplied to /test: String 
-        Invalid value undefined supplied to /bool: Boolean`));
-        spy.restore();
         done();
       });
   });
