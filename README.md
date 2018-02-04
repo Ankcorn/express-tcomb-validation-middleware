@@ -1,10 +1,15 @@
-# express-tcomb-validation-middleware
-Express Middleware that performs runtime type checking of objects. It is primerily meant for type checking in development although it is 
+# Tcomb Validation Middleware
+Express Middleware that performs runtime type checking of objects. It is primerily meant for type checking in development.
 
 Build [![CircleCI](https://circleci.com/gh/ThomasAnkcorn/express-tcomb-validation-middleware.svg?style=svg)](https://circleci.com/gh/ThomasAnkcorn/express-tcomb-validation-middleware)
 
 Tests [![Coverage Status](https://coveralls.io/repos/github/ThomasAnkcorn/express-tcomb-validation-middleware/badge.svg?branch=master)](https://coveralls.io/github/ThomasAnkcorn/express-tcomb-validation-middleware?branch=master)
 
+## Installation
+
+```
+npm i tcomb-validation-middleware
+```
 
 ## Usage
 
@@ -26,7 +31,7 @@ module.exports = {
 Then add as middleware to the route of the endpoint
 
 ```
-const t = require('express-tcomb-validation-middleware');
+const t = require('comb-validation-middleware');
 
 ... //Express setup stuff
 
@@ -79,3 +84,7 @@ artillery quick --count 1000 -n 20 http://localhost:4444/test/off/test/hi
 ## Contributing
 
 Make a github issue if you have any feature requests or problems. I welcome pull requests as long as they have the relevent tests included.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

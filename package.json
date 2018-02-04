@@ -35,5 +35,14 @@
     "request": "2.83.0",
     "tcomb": "3.2.24",
     "tcomb-validation": "3.4.1"
-  }
+  },
+  "keywords": [
+    "validation",
+    "express",
+    "tcomb"
+  ],
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/ThomasAnkcorn/express-tcomb-validation-middleware.git"
+  }  
 }
