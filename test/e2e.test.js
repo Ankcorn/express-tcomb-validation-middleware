@@ -6,13 +6,13 @@ chai.use(chaiHttp);
 
 const { expect } = chai;
 
-const url = endpoint => `http://localhost:4444${endpoint}`;
+// const url = endpoint => `http://localhost:4444${endpoint}`;
 
 describe('E2E tests', () => { // eslint-disable-line no-undef
   it('Tests posting invalid body', (done) => { // eslint-disable-line no-undef
     chai.request(server)
       .post('/test')
-      .send({})
+      .send({ not: 'test' })
       .end((err, res) => {
         expect(res.status).to.be.eql(400);
         expect(res.body).to.have.lengthOf(2);
@@ -37,7 +37,7 @@ describe('E2E tests', () => { // eslint-disable-line no-undef
       .send({})
       .end((err, res) => {
         expect(res.status).to.be.eql(200);
-        done()
+        done();
       });
   });
   it('Tests get invalid url params and custom type', (done) => { // eslint-disable-line no-undef

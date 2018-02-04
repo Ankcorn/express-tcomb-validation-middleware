@@ -7,7 +7,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.post('/test', t(test), (req, res) => {
+app.post('/test', t(test, { verboseErrors: true, logging: true }), (req, res) => {
   res.send({ message: 'schema was obviously valid' });
 });
 
