@@ -31,7 +31,7 @@ module.exports = {
 Then add as middleware to the route of the endpoint
 
 ```
-const t = require('comb-validation-middleware');
+const t = require('tcomb-validation-middleware');
 
 ... //Express setup stuff
 
