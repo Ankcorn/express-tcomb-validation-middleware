@@ -7,7 +7,7 @@ const test = t.struct({
 
 const ShortString = t.refinement(t.String, s => s.length < 3);
 
-ShortString.getValidationErrorMessage = (value) => {
+ShortString.getValidationErrorMessage = value => {
   if (!value) {
     return 'Required';
   }
@@ -23,5 +23,6 @@ const getTest = t.struct({
 });
 
 module.exports = {
-  test, getTest,
+  test,
+  getTest,
 };
