@@ -1,9 +1,12 @@
 # Tcomb Validation Middleware
 Express Middleware that performs runtime type checking of objects. It is primerily meant for type checking in development.
 
-Build [![CircleCI](https://circleci.com/gh/ThomasAnkcorn/express-tcomb-validation-middleware.svg?style=svg)](https://circleci.com/gh/ThomasAnkcorn/express-tcomb-validation-middleware)
+[![CircleCI](https://circleci.com/gh/ThomasAnkcorn/express-tcomb-validation-middleware.svg?style=svg)](https://circleci.com/gh/ThomasAnkcorn/express-tcomb-validation-middleware)
 
-Tests [![Coverage Status](https://coveralls.io/repos/github/ThomasAnkcorn/express-tcomb-validation-middleware/badge.svg?branch=master)](https://coveralls.io/github/ThomasAnkcorn/express-tcomb-validation-middleware?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/ThomasAnkcorn/express-tcomb-validation-middleware/badge.svg?branch=master)](https://coveralls.io/github/ThomasAnkcorn/express-tcomb-validation-middleware?branch=master)
+
+[![Known Vulnerabilities](https://snyk.io/test/npm/tcomb-validation-middleware/badge.svg)](https://snyk.io/test/npm/tcomb-validation-middleware)
+
 
 ## Installation
 
